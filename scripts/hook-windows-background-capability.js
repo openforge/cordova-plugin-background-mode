@@ -6,8 +6,8 @@
 */
 var fs = require("fs");
 var path = require("path");
-var Q;
-var glob;
+var Q = require("q");
+var glob = require("glob");
 var xml2js = require('xml2js');
 
 var requiredCapabilities = [
@@ -29,8 +29,8 @@ module.exports = function(context) {
   console.log("Adding proper capability to windows manifests");
 
   // Grab the Q, glob node modules from cordova
-  Q=context.requireCordovaModule("q");
-  glob=context.requireCordovaModule("glob");
+  //Q=context.requireCordovaModule("q");
+  //glob=context.requireCordovaModule("glob");
 
   // Need to return a promise since glob is async
   var deferred = Q.defer();
